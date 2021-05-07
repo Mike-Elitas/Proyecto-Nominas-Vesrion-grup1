@@ -1,0 +1,14 @@
+ @GetMapping("/register")
+    public String showInfo(Model model){
+        User user=new User();
+        model.addAttribute("user",user);
+        return "register";
+    }
+
+    @PostMapping("/register")
+    public String captureData(@ModelAttribute("user") User user){
+
+
+        System.out.println("Hola "+user);
+        return null;
+    }
