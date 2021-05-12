@@ -1,8 +1,6 @@
-package com.Permanente.servingwebcontent;
+package com.Permanente.servingwebcontent.clases;
 
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -27,14 +25,12 @@ public class Trabajador {
     private String apellido;
     private Date fechaNacimiento;
     private String sexo;
-    private int profesion;
+    private int categoria;
     private int antiguedad;
     private int extras;
-    private float irpf;
-    private float ss;
 
     //Constructor
-    public Trabajador(String dni, String nombre, String apellido, String fechaNacimiento, String sexo, int profesion, int antiguedad, int extras, float irpf, float ss) {
+    public Trabajador(String dni, String nombre, String apellido, String fechaNacimiento, String sexo, int categoria, int antiguedad, int extras) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -46,11 +42,10 @@ public class Trabajador {
             e.getMessage();
         }
         this.sexo = sexo;
-        this.profesion = profesion;
+        this.categoria = categoria;
         this.antiguedad = antiguedad;
         this.extras = extras;
-        this.irpf = irpf;
-        this.ss = ss;
+
     }
 
     public Trabajador() {
@@ -98,12 +93,12 @@ public class Trabajador {
         this.sexo = sexo;
     }
 
-    public int getProfesion() {
-        return profesion;
+    public int getCategoria() {
+        return categoria;
     }
 
-    public void setProfesion(int profesion) {
-        this.profesion = profesion;
+    public void setCategoria(int profesion) {
+        this.categoria = profesion;
     }
 
     public int getAntigüedad() {
@@ -122,20 +117,5 @@ public class Trabajador {
         this.extras = extras;
     }
 
-    public float getIrpf() {
-        return irpf;
-    }
-
-    public void setIrpf(float irpf) {
-        this.irpf = irpf;
-    }
-
-    public float getSs() {
-        return ss;
-    }
-
-    public void setSs(float ss) {
-        this.ss = ss;
-    }
 //Others Methods
 }

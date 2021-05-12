@@ -1,5 +1,10 @@
 package com.Permanente.servingwebcontent;
 
+import com.Permanente.servingwebcontent.clases.Antiguedad;
+import com.Permanente.servingwebcontent.clases.Nomina;
+import com.Permanente.servingwebcontent.clases.SalarioBase;
+import com.Permanente.servingwebcontent.clases.Trabajador;
+import com.Permanente.servingwebcontent.repository.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,50 +21,84 @@ public class NominasApplication {
         SpringApplication.run(NominasApplication.class, args);
     }
 
-
     @Autowired
     SalarioBaseRepository salarioBaseRepository;
     @Autowired
     AntiguedadRepository antiguedadRepository;
     @Autowired
     CovenioRepository covenioRepository;
+    @Autowired
+    NominaRepository nominaRepository;
 
     @Bean
     public CommandLineRunner demo(TrabajadorRepository repository) {
         return (args) -> {
-//            repository.save(new Trabajador("43231815A", "Ismael", "Martin", "01/04/1999", "H", 1, 1, 50, 2f, 6.35f));
-//            repository.save(new Trabajador("43531817B", "Miki", "Cañellas", "15/05/2000", "H", 5, 2, 55, 20f, 6.35f));
-//            repository.save(new Trabajador("43533815C", "Ivan", "sanchez", "17/06/2001", "H", 4, 3, 100, 10f, 6.35f));
-//            repository.save(new Trabajador("43271865V", "Jaun", "Molinos", "20/05/1997", "H", 3, 4, 55, 15f, 6.35f));
-//            repository.save(new Trabajador("44231715G", "Carlos", "Gonzalez", "17/08/2000", "H", 6, 1, 20, 20f, 6.35f));
-//            repository.save(new Trabajador("47231315D", "Marian", "Alcaraz", "15/07/1998", "M", 2, 5, 15, 5f, 6.35f));
-//            repository.save(new Trabajador("43431855S", "Maria", "Velazquez", "05/09/2000", "M", 1, 6, 0, 2f, 6.35f));
-//            repository.save(new Trabajador("43241915L", "Marta", "Sequera", "10/10/1999", "M", 1, 2, 30, 50f, 6.35f));
+//            repository.save(new Trabajador("43231815A", "Ismael", "Martin", "01/04/1999", "H", 1, 1, 50));
+//            repository.save(new Trabajador("43531817B", "Miki", "Cañellas", "15/05/2000", "H", 5, 2, 55));
+//            repository.save(new Trabajador("43533815C", "Ivan", "sanchez", "17/06/2001", "H", 4, 3, 100));
+//            repository.save(new Trabajador("43271865V", "Jaun", "Molinos", "20/05/1997", "H", 3, 4, 55));
+//            repository.save(new Trabajador("44231715G", "Carlos", "Gonzalez", "17/08/2000", "H", 6, 1, 20));
+//            repository.save(new Trabajador("47231315D", "Marian", "Alcaraz", "15/07/1998", "M", 2, 5, 15));
+//            repository.save(new Trabajador("43431855S", "Maria", "Velazquez", "05/09/2000", "M", 1, 6, 0));
+//            repository.save(new Trabajador("43241915L", "Marta", "Sequera", "10/10/1999", "M", 1, 2, 30));
 
-//            salarioBaseRepository.save(new SalarioBase(1000, 2));
+//            salarioBaseRepository.save(new SalarioBase(1000, 1));
 //            salarioBaseRepository.save(new SalarioBase(2000, 1));
-//            salarioBaseRepository.save(new SalarioBase(3000, 3));
-//            salarioBaseRepository.save(new SalarioBase(4000, 3));
-//            salarioBaseRepository.save(new SalarioBase(5000, 2));
+//            salarioBaseRepository.save(new SalarioBase(3000, 1));
+//            salarioBaseRepository.save(new SalarioBase(4000, 1));
+//            salarioBaseRepository.save(new SalarioBase(5000, 1));
 //            salarioBaseRepository.save(new SalarioBase(6000, 1));
+//
+//            salarioBaseRepository.save(new SalarioBase(1100, 2));
+//            salarioBaseRepository.save(new SalarioBase(2100, 2));
+//            salarioBaseRepository.save(new SalarioBase(3100, 2));
+//            salarioBaseRepository.save(new SalarioBase(4100, 2));
+//            salarioBaseRepository.save(new SalarioBase(5100, 2));
+//            salarioBaseRepository.save(new SalarioBase(6200, 2));
+//
+//            salarioBaseRepository.save(new SalarioBase(1200, 3));
+//            salarioBaseRepository.save(new SalarioBase(2200, 3));
+//            salarioBaseRepository.save(new SalarioBase(3200, 3));
+//            salarioBaseRepository.save(new SalarioBase(4200, 3));
+//            salarioBaseRepository.save(new SalarioBase(5200, 3));
+//            salarioBaseRepository.save(new SalarioBase(6200, 3));
 
 //            antiguedadRepository.save(new Antiguedad(10, 1));
-//            antiguedadRepository.save(new Antiguedad(20, 2));
+//            antiguedadRepository.save(new Antiguedad(20, 1));
 //            antiguedadRepository.save(new Antiguedad(30, 1));
-//            antiguedadRepository.save(new Antiguedad(40, 3));
-//            antiguedadRepository.save(new Antiguedad(50, 2));
+//            antiguedadRepository.save(new Antiguedad(40, 1));
+//            antiguedadRepository.save(new Antiguedad(50, 1));
 //            antiguedadRepository.save(new Antiguedad(60, 1));
+//
+//            antiguedadRepository.save(new Antiguedad(11, 2));
+//            antiguedadRepository.save(new Antiguedad(21, 2));
+//            antiguedadRepository.save(new Antiguedad(31, 2));
+//            antiguedadRepository.save(new Antiguedad(41, 2));
+//            antiguedadRepository.save(new Antiguedad(51, 2));
+//            antiguedadRepository.save(new Antiguedad(61, 2));
+//
+//            antiguedadRepository.save(new Antiguedad(12, 3));
+//            antiguedadRepository.save(new Antiguedad(22, 3));
+//            antiguedadRepository.save(new Antiguedad(32, 3));
+//            antiguedadRepository.save(new Antiguedad(42, 3));
+//            antiguedadRepository.save(new Antiguedad(52, 3));
+//            antiguedadRepository.save(new Antiguedad(62, 3));
 
 //            covenioRepository.save(new Convenio("Hosteleria"));
 //            covenioRepository.save(new Convenio("Industria"));
 //            covenioRepository.save(new Convenio("Informatica"));
 
+//            nominaRepository.save(new Nomina("43231815A",1000,100,10,10000,1100,10,20,30,40,50,60,6,"A"));
+//            nominaRepository.save(new Nomina("43241915L", 1000, 100, 10, 10000, 1100, 10, 20, 30, 40, 50, 60, 6, "B"));
+
             Trabajador trabajador = repository.findByDni("43231815A");
-            SalarioBase profesion = salarioBaseRepository.findAllById(trabajador.getProfesion());
+            SalarioBase profesion = salarioBaseRepository.findAllById(trabajador.getCategoria());
             log.info("Trabajador encontrado " + trabajador.getNombre());
             log.info("===============================================");
             log.info("Profesion encontrado " + profesion.toString());
             log.info("===============================================");
         };
     }
+
+
 }

@@ -1,5 +1,7 @@
-package com.Permanente.servingwebcontent;
+package com.Permanente.servingwebcontent.repository;
 
+import com.Permanente.servingwebcontent.clases.Nomina;
+import com.Permanente.servingwebcontent.clases.Trabajador;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -13,4 +15,5 @@ import org.springframework.data.repository.CrudRepository;
  * @Version:
  */
 public interface NominaRepository extends CrudRepository<Nomina,Integer> {
+    Nomina findByDniTrabajador(String dni);
 }

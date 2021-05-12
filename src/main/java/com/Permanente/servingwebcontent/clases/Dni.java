@@ -1,4 +1,6 @@
-package com.Permanente.servingwebcontent;
+package com.Permanente.servingwebcontent.clases;
+
+import org.springframework.stereotype.Component;
 
 /**
  * Project name: DAM20/PACKAGE_NAME
@@ -10,6 +12,7 @@ package com.Permanente.servingwebcontent;
  * @Author: Ismael - fmartin@nigul.cide.es
  * @Version:
  */
+@Component
 public class Dni {
     //Attributes
     String dni;

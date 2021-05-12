@@ -1,5 +1,6 @@
-package com.Permanente.servingwebcontent;
+package com.Permanente.servingwebcontent.repository;
 
+import com.Permanente.servingwebcontent.clases.SalarioBase;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -12,5 +13,6 @@ import org.springframework.data.repository.CrudRepository;
  * @Author: Ismael - fmartin@nigul.cide.es
  * @Version:
  */
-public interface CovenioRepository extends CrudRepository<Convenio,Integer> {
+public interface SalarioBaseRepository extends CrudRepository<SalarioBase,Integer> {
+    SalarioBase findAllById(int id);
 }

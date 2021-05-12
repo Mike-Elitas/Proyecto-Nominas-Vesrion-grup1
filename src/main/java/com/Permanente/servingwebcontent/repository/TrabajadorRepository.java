@@ -1,5 +1,6 @@
-package com.Permanente.servingwebcontent;
+package com.Permanente.servingwebcontent.repository;
 
+import com.Permanente.servingwebcontent.clases.Trabajador;
 import org.springframework.data.repository.CrudRepository;
 
 /**
@@ -12,5 +13,6 @@ import org.springframework.data.repository.CrudRepository;
  * @Author: Ismael - fmartin@nigul.cide.es
  * @Version:
  */
-public interface AntiguedadRepository extends CrudRepository<Antiguedad,Integer> {
+public interface TrabajadorRepository extends CrudRepository<Trabajador,Integer> {
+    Trabajador findByDni(String dni);
 }

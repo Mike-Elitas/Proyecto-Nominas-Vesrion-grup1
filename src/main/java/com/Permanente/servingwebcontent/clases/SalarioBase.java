@@ -1,4 +1,4 @@
-package com.Permanente.servingwebcontent;
+package com.Permanente.servingwebcontent.clases;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

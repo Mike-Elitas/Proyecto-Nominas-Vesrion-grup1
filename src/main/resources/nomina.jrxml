@@ -1,0 +1,819 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.16.0.final using JasperReports Library version 6.16.0-48579d909b7943b64690c65c71e07e0b80981928  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="Nomina2" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20"
+              topMargin="20" bottomMargin="20" uuid="b69af232-2cfe-4fff-9eea-acb67d47fe08">
+
+    <field name="salario" class="java.lang.Integer">
+    </field>
+    <field name="liquido" class="java.lang.Integer">
+    </field>
+    <field name="nombre" class="java.lang.String">
+    </field>
+    <field name="extras" class="java.lang.Integer">
+    </field>
+    <field name="categoria" class="java.lang.Integer">
+    </field>
+    <field name="apellido" class="java.lang.String">
+    </field>
+    <field name="id" class="java.lang.Integer">
+    </field>
+    <field name="cc" class="java.lang.Float">
+    </field>
+    <field name="desempleo" class="java.lang.Float">
+    </field>
+    <field name="fp" class="java.lang.Float">
+    </field>
+    <field name="horasextrafurzamayor" class="java.lang.Float">
+    </field>
+    <field name="horasextranormales" class="java.lang.Float">
+    </field>
+    <field name="descuentocc" class="java.lang.Float">
+    </field>
+    <field name="descuento_desempleo" class="java.lang.Float">
+    </field>
+    <field name="descuento_fp" class="java.lang.Float">
+    </field>
+    <field name="descuento_hextra_fueza_mayor" class="java.lang.Float">
+    </field>
+    <field name="descuento_hextra_normales" class="java.lang.Float">
+    </field>
+    <field name="descuento_irpf" class="java.lang.Float">
+    </field>
+    <field name="dni_trabajador" class="java.lang.String">
+    </field>
+    <field name="grupo" class="java.lang.String">
+    </field>
+    <field name="irpf" class="java.lang.Float">
+    </field>
+    <field name="prorata" class="java.lang.Float">
+    </field>
+    <field name="t_aportaciones" class="java.lang.Float">
+    </field>
+    <field name="t_deducciones" class="java.lang.Float">
+    </field>
+    <field name="t_devengos" class="java.lang.Float">
+    </field>
+    <field name="t_liquido" class="java.lang.Float">
+    </field>
+    <background>
+        <band splitType="Stretch"/>
+    </background>
+    <title>
+        <band height="90" splitType="Stretch">
+            <rectangle>
+                <reportElement x="0" y="-10" width="560" height="89" uuid="efcb3798-3724-4994-b48b-21a657c337ff"/>
+                <graphicElement>
+                    <pen lineWidth="2.0"/>
+                </graphicElement>
+            </rectangle>
+            <staticText>
+                <reportElement x="10" y="-10" width="90" height="20" uuid="bbe0c117-6f4a-420f-94dc-329c3f38e166"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[EMPRESA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="10" width="90" height="20" uuid="e65ef00f-8f39-47df-b01b-d0b2d53876fa"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[DOMICILIO]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="30" width="90" height="20" uuid="aadc4233-5917-4a16-9605-000222b54e71"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[CIF]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="50" width="90" height="20" uuid="66c392c2-ee58-4e08-93eb-f18013f32420"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[CCC]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="100" y="-10" width="180" height="20" uuid="d98904d6-20ab-4388-aad3-c79b612afc13"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Static Text]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="100" y="10" width="180" height="20" uuid="adf5562e-a3cc-4695-b167-aa9413cb3204"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Static Text]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="100" y="30" width="180" height="20" uuid="b52f7f7f-fef5-4f6a-8f5d-59a6b6d2bd53"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Static Text]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="100" y="50" width="180" height="20" uuid="ebb41032-365a-4f98-933f-c90614ec4184"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Static Text]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="280" y="50" width="100" height="20" uuid="6fc0a20b-3e89-4467-881d-d5bc220f08b0"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[GRUPO COTIZACIÓN]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="280" y="-10" width="100" height="20" uuid="48c9e611-95fe-4dcb-bf36-9fe49b0a559b"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[TRABAJADOR]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="280" y="30" width="100" height="20" uuid="b05c7d1c-1d4c-4c50-830d-1c02706230a6"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[CATEGORÍA]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="280" y="10" width="100" height="20" uuid="c3ff374f-b8e0-41c8-a32f-4f61a282b513"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[NIF]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="380" y="-10" width="170" height="20" uuid="ce03601c-c6ee-4a06-9cc8-5c920029202e"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement verticalAlignment="Bottom"/>
+                <textFieldExpression><![CDATA[$F{nombre}+" "+$F{apellido}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="380" y="10" width="170" height="20" uuid="2fda64ea-537c-4ced-9ab0-809db536427c"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement verticalAlignment="Bottom"/>
+                <textFieldExpression><![CDATA[$F{dni_trabajador}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="380" y="30" width="170" height="20" uuid="0d054143-037e-4ef9-8bc8-8be9770bbd1a"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Bottom"/>
+                <textFieldExpression><![CDATA[$F{categoria}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="380" y="50" width="170" height="20" uuid="89f5a722-26f4-479a-8c55-6b7129315466"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Bottom"/>
+                <textFieldExpression><![CDATA[$F{grupo}]]></textFieldExpression>
+            </textField>
+        </band>
+    </title>
+    <pageHeader>
+        <band splitType="Stretch"/>
+    </pageHeader>
+    <columnHeader>
+        <band splitType="Stretch"/>
+    </columnHeader>
+    <detail>
+        <band height="710" splitType="Stretch">
+            <rectangle>
+                <reportElement x="0" y="360" width="560" height="349" uuid="df0ae80e-570c-4b2e-aad9-b04bf6a6acdc"/>
+                <graphicElement>
+                    <pen lineWidth="2.0"/>
+                </graphicElement>
+            </rectangle>
+            <rectangle>
+                <reportElement x="0" y="0" width="560" height="349" uuid="c45d566c-2c70-4564-b56a-1f8193ebd837"/>
+                <graphicElement>
+                    <pen lineWidth="2.0"/>
+                </graphicElement>
+            </rectangle>
+            <staticText>
+                <reportElement x="10" y="10" width="100" height="18" uuid="9620e6c0-c6d3-477d-bf8c-fd05a2c5788b"/>
+                <textElement verticalAlignment="Middle"/>
+                <text><![CDATA[Perido liquidación]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="110" y="10" width="170" height="18" uuid="8fe8379d-9d0f-4745-9eee-3339fe421787"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="280" y="10" width="130" height="18" uuid="6dc99e23-109e-408f-a06b-65211f83b944"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="410" y="10" width="70" height="18" uuid="404da93c-d562-4ad2-8814-e3eb13c79c73"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <text><![CDATA[N.ºdias]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="480" y="9" width="70" height="20" uuid="74466124-816c-4ba3-8fc7-47bf7e1650b5"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="10" y="28" width="100" height="20" uuid="a64aab03-22d6-4312-aad7-991a65df74d3"/>
+                <textElement verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[I.DEVENGOS]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="480" y="30" width="70" height="20" uuid="ff6704e0-81c5-4d92-98a2-f58f02eb2ee6"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[TOTALES]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="48" width="120" height="20" uuid="f8caa359-ab1d-4693-9f57-40bd9560bd9f"/>
+                <textElement verticalAlignment="Middle"/>
+                <text><![CDATA[1.Percepciones salariales]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="68" width="100" height="20" uuid="afe523f4-e1aa-44cc-a61f-16e54674d922"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Salario Base]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="410" y="68" width="70" height="20" uuid="71d6d688-24e4-4d81-af99-f496e84ae61c"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{salario}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="70" y="88" width="340" height="1" uuid="c5260e45-c228-4a06-8a6d-e01cf58cff9e"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="10" y="90" width="100" height="20" uuid="2b19cbde-b876-402f-8609-abd50786577b"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Extras]]></text>
+            </staticText>
+            <line>
+                <reportElement x="50" y="110" width="360" height="1" uuid="b07204b6-7269-4404-ad03-680f8701677d"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <textField>
+                <reportElement x="410" y="90" width="70" height="20" uuid="f9bfb31e-3b33-4c54-8e51-f50a28d57b87"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{extras}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="10" y="111" width="100" height="20" uuid="29d45db0-96a6-43a7-98a1-ff97dbf6d4cd"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Antigüedad]]></text>
+            </staticText>
+            <line>
+                <reportElement x="70" y="131" width="340" height="1" uuid="614da9d3-2603-4163-a9f4-75df3240a9e3"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <textField>
+                <reportElement x="410" y="111" width="70" height="20" uuid="e44ff84d-4bf0-498b-b130-6b679fb71aad"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{liquido}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="10" y="131" width="100" height="20" uuid="4c52681a-8857-41df-a63a-34ef04ebd5ac"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Horas extraordinarias]]></text>
+            </staticText>
+            <line>
+                <reportElement x="110" y="151" width="300" height="1" uuid="9a89ee96-9ceb-4905-9668-46a171cd7ffa"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="10" y="152" width="110" height="20" uuid="b37d8aab-ee88-461a-b763-f8ad38e0d78f"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Horas Complementarias]]></text>
+            </staticText>
+            <line>
+                <reportElement x="120" y="172" width="290" height="1" uuid="b7a79bba-9f67-4b6f-8156-e0b9c526cadf"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="410" y="132" width="70" height="19" uuid="1caee86a-df75-435d-885f-84eb99ae3d2a"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="410" y="152" width="70" height="20" uuid="3ff98149-35ad-40eb-8997-5f9d5312c26c"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <line>
+                <reportElement x="100" y="190" width="310" height="1" uuid="709ded80-fe0e-43d2-bb27-20dca82db70a"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="410" y="170" width="70" height="20" uuid="b8edd0d5-1ce2-452a-9217-a34392a59312"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="170" width="110" height="20" uuid="8b75d0da-62da-48e1-8e83-62bb26dd3a58"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Salario en especies]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="220" width="130" height="20" uuid="6f5dd5da-3a2d-4f0c-8c8e-3508e1ee6595"/>
+                <textElement verticalAlignment="Middle"/>
+                <text><![CDATA[2.Percepciones no salariales]]></text>
+            </staticText>
+            <line>
+                <reportElement x="160" y="260" width="250" height="1" uuid="40759296-7284-4050-b9e3-746aa6c2433d"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="410" y="240" width="70" height="20" uuid="093a285b-ba74-4c01-80c2-5aed74c917cf"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="240" width="150" height="20" uuid="7c2fa118-f27f-4e9b-9fd6-b9126ac71877"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Indenmizaciones o Suplementos]]></text>
+            </staticText>
+            <line>
+                <reportElement x="260" y="280" width="150" height="1" uuid="cf2112d4-93bb-4edb-9a05-0afdd82d0a56"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="410" y="260" width="70" height="20" uuid="97bb73f6-3019-4dac-bb5f-a4d0f4e8481f"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="10" y="260" width="250" height="20" uuid="08c9e917-bf8a-45c2-baa1-27a0ed8fc695"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Prestaciones e indenmizaciones de la Sguridad Social]]></text>
+            </staticText>
+            <line>
+                <reportElement x="10" y="210" width="469" height="1" uuid="28993326-8835-4f9e-befc-60ab7c064a09"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Solid"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="10" y="280" width="150" height="20" uuid="ea92d7b0-d88a-40c1-abef-8281cb741c5c"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Otras percepciones no salariales]]></text>
+            </staticText>
+            <line>
+                <reportElement x="160" y="300" width="250" height="1" uuid="a8440ccf-d95e-4d89-8d87-9e894377c572"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="410" y="280" width="70" height="20" uuid="49c55205-0eae-4e24-ba92-4a3ef250be71"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="160" y="310" width="120" height="20" uuid="fd0cfa2f-d7f0-4708-ad96-a0f91d73b9eb"/>
+                <textElement verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[A. TOTAL DEVENGADO]]></text>
+            </staticText>
+            <line>
+                <reportElement x="270" y="330" width="209" height="1" uuid="269ed0a0-5bd8-4386-9939-189030096a69"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <textField>
+                <reportElement x="480" y="310" width="70" height="20" uuid="78774835-dc86-436d-8e78-f1fd72556140"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{t_devengos}+"€"]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="418" y="477" width="70" height="19" uuid="c3e976ee-5c70-4715-94f9-05f63094b26d"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <line>
+                <reportElement x="192" y="517" width="41" height="1" uuid="ae02b59f-78d9-4ea6-ad6c-a77782727e53"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="418" y="497" width="70" height="20" uuid="1bc1dcc9-b3fe-4a21-8e7d-1747eacb9463"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <line>
+                <reportElement x="78" y="455" width="155" height="1" uuid="d659c317-4bd4-4264-b121-19d7cd7801d3"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <line>
+                <reportElement x="142" y="535" width="276" height="1" uuid="b61c898d-7e4d-4774-9677-ec69d06e28e8"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="18" y="515" width="124" height="20" uuid="dcad947c-71c1-4fba-9359-9a3f958e05f2"/>
+                <textElement verticalAlignment="Bottom">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[TOTAL APORTACIONES]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="18" y="360" width="100" height="20" uuid="42ffbd5b-a2f5-4703-9d56-897132e9a980"/>
+                <textElement verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[II.DEDUCCIONES]]></text>
+            </staticText>
+            <line>
+                <reportElement x="78" y="476" width="155" height="1" uuid="156da9f7-346b-42c1-846f-bd111c6d773d"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="18" y="476" width="144" height="20" uuid="5f3775e4-db18-4a8c-b6e5-a09af5156ac8"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Horas extraordinarias Normales]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="18" y="456" width="110" height="20" uuid="7d61a356-919e-4fc9-a51b-4df132fb27cd"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Formación Profesional]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="418" y="413" width="70" height="20" uuid="73126feb-d30c-4d19-a309-3614d93bd6c3"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{descuentocc}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="418" y="456" width="70" height="20" uuid="8c0d8528-124c-435e-9967-7716d542779a"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{descuento_fp}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="18" y="497" width="174" height="20" uuid="a354361c-9c7b-4ae1-819a-7e5eb14b3042"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Horas extraordinarias de Fuerza Mayor]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="18" y="413" width="110" height="20" uuid="0a90ef66-133f-433e-ba56-9ec76d8bdccf"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Contingencias Comunes]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="18" y="435" width="100" height="20" uuid="f10b80a5-dd47-4b87-a157-2cfaa7f87103"/>
+                <textElement verticalAlignment="Bottom"/>
+                <text><![CDATA[Desempleado]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="418" y="435" width="70" height="20" uuid="917024ac-afea-4ab6-8935-31a031a3f1a7"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{descuento_desempleo}]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="162" y="496" width="71" height="1" uuid="7fef25f6-c123-4941-a8dd-58f2e62ccd34"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <line>
+                <reportElement x="128" y="433" width="105" height="1" uuid="395f3e1c-689a-42e9-a95e-b378db337289"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="18" y="380" width="344" height="20" uuid="7560efba-c45e-418b-96ee-59d1205f5efa"/>
+                <textElement verticalAlignment="Middle">
+                    <font isBold="true"/>
+                </textElement>
+                <text>
+                    <![CDATA[1.Aportaciones del trabajador a las cotizaciones de ls S.S y recaudación conjunta]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="142" y="413" width="70" height="20" uuid="b85bfcb6-36b9-4a9f-85a7-d574a001bfe0"/>
+                <textElement verticalAlignment="Bottom"/>
+                <textFieldExpression><![CDATA[$F{prorata}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="142" y="435" width="70" height="20" uuid="0848010b-9078-4e74-a256-cc27321a7680"/>
+                <textElement verticalAlignment="Bottom"/>
+                <textFieldExpression><![CDATA[$F{prorata}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="142" y="456" width="70" height="20" uuid="733e1ecb-b8f8-4c59-b0ed-d889385b8c67"/>
+                <textElement verticalAlignment="Bottom"/>
+                <textFieldExpression><![CDATA[$F{prorata}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="259" y="400" width="48" height="17" uuid="8ce3604d-c8cc-4481-91df-59ffd3a0b1aa"/>
+                <text><![CDATA[Porcentaje]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="248" y="417" width="70" height="20" uuid="5b9ae862-96a5-423c-b452-d1e001013ebb"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{cc}+"%"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="248" y="437" width="70" height="20" uuid="578c8e07-6a1e-44f2-a1e8-783a0029c392"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{desempleo}+"%"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="248" y="457" width="70" height="20" uuid="f5fe10f5-6f13-4579-8689-c947c388aa1e"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{fp}+"%"]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="334" y="433" width="84" height="1" uuid="be1b6adc-77a5-46f9-a4a9-b4fd60d9de65"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <line>
+                <reportElement x="335" y="455" width="84" height="1" uuid="c1bd323a-ab1e-406e-bd74-94d16e2058e6"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <line>
+                <reportElement x="334" y="475" width="84" height="1" uuid="815a37cd-4512-4e9f-bc81-5caf0080be61"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <line>
+                <reportElement x="334" y="496" width="84" height="1" uuid="69d8d002-8d8b-424c-918b-63ad9de02cba"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <line>
+                <reportElement x="334" y="517" width="84" height="1" uuid="7f785e04-1ec9-4af2-8a16-fdddfb7a61e5"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <textField>
+                <reportElement x="248" y="477" width="70" height="20" uuid="a2d7ff8b-218c-49b1-86de-ba05e7506e52"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{horasextranormales}+"%"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="248" y="497" width="70" height="20" uuid="42ff272e-a7b6-46ed-8903-9249958cddea"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{horasextrafurzamayor}+"%"]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="418" y="515" width="70" height="20" uuid="ef321eaa-d80c-4a24-80a2-7d1b60086ee0"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{t_aportaciones}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="18" y="536" width="34" height="20" uuid="200ab952-b57c-4432-b6a5-141f276f6542"/>
+                <textElement verticalAlignment="Middle">
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[2.IRPF]]></text>
+            </staticText>
+            <line>
+                <reportElement x="52" y="553" width="181" height="1" uuid="467a95f5-0721-45e9-b2a8-fa02a0834b21"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <textField>
+                <reportElement x="63" y="536" width="70" height="17" uuid="9fc54bc7-eb26-4e5a-acba-895bd148ce6f"/>
+                <textElement verticalAlignment="Bottom"/>
+                <textFieldExpression><![CDATA[$F{t_devengos}]]></textFieldExpression>
+            </textField>
+            <textField>
+                <reportElement x="248" y="536" width="70" height="20" uuid="d8951880-ab6b-41b0-8b4a-342df301dcb0"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{irpf}+"%"]]></textFieldExpression>
+            </textField>
+            <line>
+                <reportElement x="334" y="555" width="84" height="1" uuid="d5fcc17e-ab90-41c5-a395-58a425b4c5dd"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <textField>
+                <reportElement x="418" y="536" width="70" height="20" uuid="26aad369-1fa5-491d-82b8-c3ec8ef6016d"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{descuento_irpf}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="159" y="613" width="124" height="20" uuid="50aab60c-8025-4fa6-966f-a93293006564"/>
+                <textElement verticalAlignment="Bottom">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[B. TOTAL A DEDUCIR]]></text>
+            </staticText>
+            <line>
+                <reportElement x="283" y="633" width="135" height="1" uuid="5e1c1627-4964-4abd-a4b1-c2493320cfd8"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <textField>
+                <reportElement x="418" y="613" width="70" height="20" uuid="1a00d18e-609a-405e-a09a-5adc3f8b565b"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{t_deducciones}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="18" y="556" width="55" height="20" uuid="28c6ae04-ba2b-4fa8-90eb-18bf56c4d718"/>
+                <textElement verticalAlignment="Bottom">
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[3.Anticipos]]></text>
+            </staticText>
+            <line>
+                <reportElement x="73" y="576" width="345" height="1" uuid="d477caa7-b41e-4509-951f-2d6ba31ed3f8"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="418" y="556" width="70" height="20" uuid="7a2331d8-2e04-42f7-8074-71539bdce26a"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="18" y="573" width="205" height="20" uuid="7e98f9f2-dfce-4006-8c3a-74a60d646b1f"/>
+                <textElement verticalAlignment="Bottom">
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[4.Valor de los productos recibidos en especie]]></text>
+            </staticText>
+            <line>
+                <reportElement x="223" y="593" width="195" height="1" uuid="49734706-f6ca-4102-9c4e-936f05cdf810"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="418" y="573" width="70" height="20" uuid="6bc62fe0-b246-4844-b27b-d97c7f16b4ae"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="18" y="593" width="95" height="20" uuid="4b3cc99e-5724-4506-bf2d-c5ceebb9ceed"/>
+                <textElement verticalAlignment="Bottom">
+                    <font isBold="false"/>
+                </textElement>
+                <text><![CDATA[5.Otras deducciones]]></text>
+            </staticText>
+            <line>
+                <reportElement x="113" y="613" width="305" height="1" uuid="81edd2e6-9634-45da-bd8d-6ab5a2468bc4"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <staticText>
+                <reportElement x="418" y="593" width="70" height="20" uuid="2d83c041-4b18-4b80-a464-87a20d385691"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <text><![CDATA[]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="159" y="633" width="164" height="20" uuid="30290012-ca15-41e8-82dc-53447eb41cdd"/>
+                <textElement verticalAlignment="Bottom">
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[LIQUIDO TOTAL A PERCIBIR(A-B)]]></text>
+            </staticText>
+            <line>
+                <reportElement x="323" y="653" width="159" height="1" uuid="339bc727-4f09-4efa-b068-8e067215eee5"/>
+                <graphicElement>
+                    <pen lineWidth="2.0" lineStyle="Dotted"/>
+                </graphicElement>
+            </line>
+            <textField>
+                <reportElement x="483" y="634" width="70" height="19" uuid="b34085bd-5622-49c3-bda3-8c40b765426c"/>
+                <box>
+                    <bottomPen lineWidth="2.0"/>
+                </box>
+                <textElement textAlignment="Right" verticalAlignment="Middle"/>
+                <textFieldExpression><![CDATA[$F{t_liquido}+"€"]]></textFieldExpression>
+            </textField>
+            <textField pattern="MMMMM dd, yyyy">
+                <reportElement x="470" y="690" width="90" height="18" uuid="66a8c966-61e3-46a2-af8a-888649541a35"/>
+                <textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="13" y="660" width="100" height="18" uuid="89b67e5f-34f6-44c5-a2c9-673b8d5a5389"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Firma del trabajador]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="159" y="660" width="139" height="18" uuid="de5751a1-17b5-429f-991c-f09c3a0ed5a8"/>
+                <textElement>
+                    <font isBold="true"/>
+                </textElement>
+                <text><![CDATA[Firma y Sello de la empresa]]></text>
+            </staticText>
+        </band>
+    </detail>
+    <columnFooter>
+        <band splitType="Stretch"/>
+    </columnFooter>
+    <pageFooter>
+        <band splitType="Stretch"/>
+    </pageFooter>
+    <summary>
+        <band splitType="Stretch"/>
+    </summary>
+</jasperReport>
