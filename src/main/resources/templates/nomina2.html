@@ -721,7 +721,7 @@
                         <td colspan="7" rowspan="2"
                             style="border-bottom: 2px solid #000000; text-indent: 0px;  vertical-align: middle;text-align: right;">
                             <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px; line-height: 1.2578125;"
-                                  th:text="${t.getDescuentocc()}"></span>
+                                  th:text="${t.getDescuento_desempleo()}"></span>
                         </td>
                         <td colspan="4">
                         </td>
@@ -776,7 +776,7 @@
                         <td colspan="7" rowspan="3"
                             style="border-bottom: 2px solid #000000; text-indent: 0px;  vertical-align: middle;text-align: right;">
                             <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px; line-height: 1.2578125;"
-                                  th:text="${t.getDescuentocc()}"></span>
+                                  th:text="${t.getDescuento_fp()}"></span>
                         </td>
                         <td colspan="4">
                         </td>
@@ -1009,7 +1009,7 @@
                         <td>
                         </td>
                         <td colspan="10" style="text-indent: 0px;  vertical-align: bottom;text-align: left;">
-                            <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px; line-height: 1.2578125;">1000.0</span>
+                            <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px; line-height: 1.2578125;" th:text="${t.getT_devengos()}">1000.0</span>
                         </td>
                         <td colspan="10">
                         </td>
@@ -1021,7 +1021,7 @@
                         </td>
                         <td colspan="7" rowspan="4"
                             style="border-bottom: 2px solid #000000; text-indent: 0px;  vertical-align: middle;text-align: right;">
-                            <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px; line-height: 1.2578125;">60.0</span>
+                            <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px; line-height: 1.2578125;" th:text="${t.getDescuento_irpf()}">60.0</span>
                         </td>
                         <td colspan="4">
                         </td>
@@ -1239,7 +1239,7 @@
                         </td>
                         <td colspan="7"
                             style="border-bottom: 2px solid #000000; text-indent: 0px;  vertical-align: middle;text-align: right;">
-                            <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px; line-height: 1.2578125;">100.0</span>
+                            <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px; line-height: 1.2578125;" th:text="${t.getT_deducciones()}">100.0</span>
                         </td>
                         <td colspan="4">
                         </td>
@@ -1292,7 +1292,7 @@
                         </td>
                         <td colspan="3"
                             style="border-bottom: 2px solid #000000; text-indent: 0px;  vertical-align: middle;text-align: right;">
-                            <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px; line-height: 1.2578125;">10000.0€</span>
+                            <span style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif; color: #000000; font-size: 10px; line-height: 1.2578125;" th:text="${t.getT_liquido()}">10000.0€</span>
                         </td>
                         <td colspan="2">
                         </td>
@@ -1346,7 +1346,9 @@
             <td width="50%">&nbsp;</td>
         </tr>
     </table>
-    <button>Export PDF</button>
+    <form action="#" th:action="@{/nomina2}" method="post" th:object="${pdf}">
+        <button >Export PDF</button>
+    </form>
     <button>Export CSV</button>
     <button>Export XML</button>
 </div>

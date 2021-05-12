@@ -39,8 +39,15 @@ public class MainController {
     @PostMapping(value = "/nomina")
     public String captureData(@ModelAttribute("dni") Dni dni, Model model) {
         model.addAttribute("t", generarReporte(dni.getDni()));
-        return "Nomina2";
+        return "nomina2";
     }
+
+    @PostMapping(value = "/nomina2")
+    public String generarPdf(@ModelAttribute("t") Report report) throws JRException, FileNotFoundException {
+        service.exportToPdf(report);
+        return "reporteGenerado";
+    }
+
 
     private Report generarReporte(String dni) {
         Report report = new Report();

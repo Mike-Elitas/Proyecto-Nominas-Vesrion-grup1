@@ -1,13 +1,9 @@
 package com.Permanente.servingwebcontent.services;
 
 import com.Permanente.servingwebcontent.clases.*;
-import com.Permanente.servingwebcontent.repository.AntiguedadRepository;
-import com.Permanente.servingwebcontent.repository.NominaRepository;
-import com.Permanente.servingwebcontent.repository.SalarioBaseRepository;
-import com.Permanente.servingwebcontent.repository.TrabajadorRepository;
+
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.ResourceUtils;
 
