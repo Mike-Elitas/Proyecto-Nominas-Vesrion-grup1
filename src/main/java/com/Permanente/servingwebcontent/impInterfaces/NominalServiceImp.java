@@ -1,4 +1,4 @@
-package com.Permanente.servingwebcontent.interfacesImp;
+package com.Permanente.servingwebcontent.impInterfaces;
 
 import com.Permanente.servingwebcontent.clases.Antiguedad;
 import com.Permanente.servingwebcontent.clases.SalarioBase;

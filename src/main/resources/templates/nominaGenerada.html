@@ -1350,6 +1350,8 @@
             <td width="50%">&nbsp;</td>
         </tr>
     </table>
+    <h3>Seleccione Modo de Exportación</h3>
+
     <form action="#" th:action="@{/nominaGenerada/pdf}" method="post" th:object="${t}">
         <button>Export PDF</button>
     </form>
@@ -1359,7 +1361,6 @@
     <form action="#" th:action="@{/nominaGenerada/csv}" method="post" th:object="${t}">
         <button>Export CSV</button>
     </form>
-
 </div>
 </body>
 </html>

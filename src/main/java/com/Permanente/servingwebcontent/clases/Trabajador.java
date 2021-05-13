@@ -10,7 +10,7 @@ import java.util.Date;
  * Project name: DAM20/PACKAGE_NAME
  * Filename:
  * Created:  14/11/2020 / 13:47
- * Description:
+ * Description: Esta clase hace de tabla en la base de datos. En esta tabla simplemente se recoge la informacion de los trabajadores.
  * Revision:
  *
  * @Author: Ismael - fmartin@nigul.cide.es

@@ -9,7 +9,7 @@ import javax.persistence.Id;
  * Project name: DAM20/PACKAGE_NAME
  * Filename:
  * Created:  14/11/2020 / 13:47
- * Description:
+ * Description: Esta clase hace de tabla en la base de datos. Es donde se almacena el salario base que segun el ID de convenio sera mas alto o mas bajo.
  * Revision:
  *
  * @Author: Ismael - fmartin@nigul.cide.es

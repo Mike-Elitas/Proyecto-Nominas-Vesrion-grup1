@@ -9,7 +9,7 @@ import javax.persistence.Id;
  * Project name: DAM20/PACKAGE_NAME
  * Filename:
  * Created:  14/11/2020 / 13:47
- * Description:
+ * Description: Esta clase hace de tabla en la base de datos. Simplemente de lo que se encarga esta tabla es de dale una ID a los distintos convenios.
  * Revision:
  *
  * @Author: Ismael - fmartin@nigul.cide.es

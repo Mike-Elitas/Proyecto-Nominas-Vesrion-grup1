@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
  * Project name: DAM20/PACKAGE_NAME
  * Filename:
  * Created:  14/11/2020 / 13:47
- * Description:
+ * Description: Esta clase se encargara de almacenar el DNI del trabajador solicitado para finalmente extraer la nomina.
  * Revision:
  *
  * @Author: Ismael - fmartin@nigul.cide.es

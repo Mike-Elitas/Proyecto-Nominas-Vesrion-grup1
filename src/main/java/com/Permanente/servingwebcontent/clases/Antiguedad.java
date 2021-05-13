@@ -9,7 +9,8 @@ import javax.persistence.Id;
  * Project name: DAM20/PACKAGE_NAME
  * Filename:
  * Created:  14/11/2020 / 13:47
- * Description:
+ * Description: Esta clase hace de tabla en la base de datos. Es donde se almacena los extras por antiguedad que segun
+ * el ID de convenio seran mas altos o mas bajos.
  * Revision:
  *
  * @Author: Ismael - fmartin@nigul.cide.es

@@ -2,6 +2,10 @@ package com.Permanente.servingwebcontent.interfaces;
 
 import com.Permanente.servingwebcontent.clases.Trabajador;
 
+/**
+ * Esta interfaz es donde se instancian lo metodos necesarios con lo que cada uno requiere para calcular datos y posteriormente plasmarlos en la nomina.
+ */
+
 public interface NominalService {
     float devengos(Trabajador trabajador);
 

@@ -1,13 +1,15 @@
 package com.Permanente.servingwebcontent.clases;
 
-import com.Permanente.servingwebcontent.repository.AntiguedadRepository;
-import com.Permanente.servingwebcontent.repository.NominaRepository;
-import com.Permanente.servingwebcontent.repository.SalarioBaseRepository;
-import com.Permanente.servingwebcontent.repository.TrabajadorRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-
+/**
+ * Project name: DAM20/PACKAGE_NAME
+ * Filename:
+ * Created:  14/11/2020 / 13:47
+ * Description: Clase encargade almacenar todos los valores necesarios para poder generar un reporte de nomina.
+ * Revision:
+ *
+ * @Author: Ismael - fmartin@nigul.cide.es
+ * @Version:
+ */
 public class Report {
 
 

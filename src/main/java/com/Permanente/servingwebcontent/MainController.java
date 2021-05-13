@@ -13,15 +13,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import javax.servlet.http.HttpServletRequest;
+
 import javax.servlet.http.HttpServletResponse;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.AbstractList;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Controller
@@ -40,21 +36,28 @@ public class MainController {
     @Autowired
     ReportService reportService;
 
-
+    //Metodo encargado de mostrar la vista principal del programa
     @GetMapping("/nomina")
     public String nomina(Model model) {
         Dni dni = new Dni();
-        List<String> dnis= new ArrayList<>();
-        List<Trabajador> trabajadorList= (List<Trabajador>) trabajadorRepository.findAll();
-        for (Trabajador t:
-             trabajadorList) {
+        //Generamos dos listas una de Dni's y otra de trabajadores
+        List<String> dnis = new ArrayList<>();
+        List<Trabajador> trabajadorList = (List<Trabajador>) trabajadorRepository.findAll();
+
+        //Almacenamos los Dni de los trabajadores en la lista de dni's
+        for (Trabajador t :
+                trabajadorList) {
             dnis.add(t.getDni());
         }
+
+        //Agregamos dos modelos para poder gestionarlos desde html
         model.addAttribute("dnis", dnis);
         model.addAttribute("dni", dni);
+
         return "nomina";
     }
 
+    //Metodo encargado de recoger la solicitud de generar una nomina y retorna el reporte en formato html para ser visto
     @PostMapping("/nomina")
     public String generar(@ModelAttribute("dnis") Dni dni, Model model) {
         Nomina nomina = generarNomina(dni);
@@ -63,25 +66,28 @@ public class MainController {
         return "nominaGenerada";
     }
 
+    //Metodo en cargado de recoger la solicitud de exportar a PDF
     @PostMapping(value = "/nominaGenerada/pdf")
     public String generarPdf(Model model) throws JRException, FileNotFoundException {
-        model.addAttribute("report",reportService.exportToPdf(report));
+        model.addAttribute("report", reportService.exportToPdf(report));
         return "reporteGenerado";
     }
 
+    //Metodo en cargado de recoger la solicitud de exportar a XML
     @PostMapping(value = "/nominaGenerada/xml")
     public String generarXml(Model model) throws JRException, IOException {
-        model.addAttribute("report",reportService.exportToPdf(report));
+        model.addAttribute("report", reportService.exportToXml(report));
         return "reporteGenerado";
     }
 
+    //Metodo en cargado de recoger la solicitud de exportar a CSV
     @PostMapping(value = "/nominaGenerada/csv")
     public String generarCsv(HttpServletResponse response) throws IOException {
         reportService.exportToCsv(report, response);
         return "reporteGenerado";
     }
 
-
+    //Metodo encargado de generar una nomina e insertarla en la base de datos
     private Nomina generarNomina(Dni dni) {
         Trabajador trabajador = trabajadorRepository.findByDni(dni.getDni());
         String dniTrabajador = trabajador.getDni();
@@ -99,6 +105,7 @@ public class MainController {
         return nomina;
     }
 
+    //Metodo encargado de generar un reporte para mostrar al usuario
     private Report generarReporte(Nomina nomina) {
         Report report = new Report();
         Trabajador trabajador = trabajadorRepository.findByDni(nomina.getDniTrabajador());

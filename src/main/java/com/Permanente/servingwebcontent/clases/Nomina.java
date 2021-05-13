@@ -9,7 +9,8 @@ import javax.persistence.Id;
  * Project name: DAM20/PACKAGE_NAME
  * Filename:
  * Created:  14/11/2020 / 13:47
- * Description:
+ * Description: Esta clase es una tabla la cual se activa en la base de datos al generar la primera nomina para asi
+ * poder almacenar la informacion de todas las que se realicen.
  * Revision:
  *
  * @Author: Ismael - fmartin@nigul.cide.es
