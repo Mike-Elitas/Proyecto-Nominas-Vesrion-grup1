@@ -33,14 +33,14 @@ public class NominasApplication {
     @Bean
     public CommandLineRunner demo(TrabajadorRepository repository) {
         return (args) -> {
-//            repository.save(new Trabajador("43231815A", "Ismael", "Martin", "01/04/1999", "H", 1, 1, 50));
-//            repository.save(new Trabajador("43531817B", "Miki", "Cañellas", "15/05/2000", "H", 5, 2, 55));
-//            repository.save(new Trabajador("43533815C", "Ivan", "sanchez", "17/06/2001", "H", 4, 3, 100));
-//            repository.save(new Trabajador("43271865V", "Jaun", "Molinos", "20/05/1997", "H", 3, 4, 55));
-//            repository.save(new Trabajador("44231715G", "Carlos", "Gonzalez", "17/08/2000", "H", 6, 1, 20));
-//            repository.save(new Trabajador("47231315D", "Marian", "Alcaraz", "15/07/1998", "M", 2, 5, 15));
-//            repository.save(new Trabajador("43431855S", "Maria", "Velazquez", "05/09/2000", "M", 1, 6, 0));
-//            repository.save(new Trabajador("43241915L", "Marta", "Sequera", "10/10/1999", "M", 1, 2, 30));
+//            repository.save(new Trabajador("43231815A", "Ismael", "Martin", "01/04/1999", "H", 1, 1, 50, 15));
+//            repository.save(new Trabajador("43531817B", "Miki", "Cañellas", "15/05/2000", "H", 5, 2, 55, 20));
+//            repository.save(new Trabajador("43533815C", "Ivan", "sanchez", "17/06/2001", "H", 4, 3, 100, 2));
+//            repository.save(new Trabajador("43271865V", "Jaun", "Molinos", "20/05/1997", "H", 3, 4, 55, 10));
+//            repository.save(new Trabajador("44231715G", "Carlos", "Gonzalez", "17/08/2000", "H", 6, 1, 20, 8));
+//            repository.save(new Trabajador("47231315D", "Marian", "Alcaraz", "15/07/1998", "M", 2, 5, 15, 18));
+//            repository.save(new Trabajador("43431855S", "Maria", "Velazquez", "05/09/2000", "M", 1, 6, 0, 25));
+//            repository.save(new Trabajador("43241915L", "Marta", "Sequera", "10/10/1999", "M", 1, 2, 30, 50));
 
 //            salarioBaseRepository.save(new SalarioBase(1000, 1));
 //            salarioBaseRepository.save(new SalarioBase(2000, 1));
@@ -92,7 +92,7 @@ public class NominasApplication {
 //            nominaRepository.save(new Nomina("43241915L", 1000, 100, 10, 10000, 1100, 10, 20, 30, 40, 50, 60, 6, "B"));
 
             Trabajador trabajador = repository.findByDni("43231815A");
-            SalarioBase profesion = salarioBaseRepository.findAllById(trabajador.getCategoria());
+            SalarioBase profesion = salarioBaseRepository.findById(trabajador.getCategoria());
             log.info("Trabajador encontrado " + trabajador.getNombre());
             log.info("===============================================");
             log.info("Profesion encontrado " + profesion.toString());

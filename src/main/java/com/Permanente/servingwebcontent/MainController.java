@@ -1,6 +1,7 @@
 package com.Permanente.servingwebcontent;
 
 import com.Permanente.servingwebcontent.clases.*;
+import com.Permanente.servingwebcontent.interfaces.NominalService;
 import com.Permanente.servingwebcontent.repository.AntiguedadRepository;
 import com.Permanente.servingwebcontent.repository.NominaRepository;
 import com.Permanente.servingwebcontent.repository.SalarioBaseRepository;
@@ -10,51 +11,88 @@ import net.sf.jasperreports.engine.JRException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-
-
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 
 @Controller
 public class MainController {
+    private Report report;
     @Autowired
-    private TrabajadorRepository trabajadorRepository;
+    NominaRepository nominaRepository;
     @Autowired
-    private NominaRepository nominaRepository;
+    TrabajadorRepository trabajadorRepository;
     @Autowired
-    private SalarioBaseRepository salarioBaseRepository;
+    AntiguedadRepository antiguedadRepository;
     @Autowired
-    private AntiguedadRepository antiguedadRepository;
+    SalarioBaseRepository salarioBaseRepository;
     @Autowired
-    private ReportService service;
+    NominalService nominalService;
+    @Autowired
+    ReportService reportService;
+
 
     @GetMapping("/nomina")
-    public String showInfo(Model model) {
+    public String nomina(Model model) {
         Dni dni = new Dni();
         model.addAttribute("dni", dni);
         return "nomina";
     }
 
-    @PostMapping(value = "/nomina")
-    public String captureData(@ModelAttribute("dni") Dni dni, Model model) {
-        model.addAttribute("t", generarReporte(dni.getDni()));
-        return "nomina2";
+    @PostMapping("/nomina")
+    public String generar(@ModelAttribute("dni") Dni dni, Model model) {
+        Nomina nomina = generarNomina(dni);
+        report = generarReporte(nomina);
+        model.addAttribute("t", report);
+        return "nominaGenerada";
     }
 
-    @PostMapping(value = "/nomina2")
-    public String generarPdf(@ModelAttribute("t") Report report) throws JRException, FileNotFoundException {
-        service.exportToPdf(report);
+    @PostMapping(value = "/nominaGenerada/pdf")
+    public String generarPdf() throws JRException, FileNotFoundException {
+        reportService.exportToPdf(report);
+        return "reporteGenerado";
+    }
+
+    @PostMapping(value = "/nominaGenerada/xml")
+    public String generarXml() throws JRException, IOException {
+        reportService.exportToXml(report);
+        return "reporteGenerado";
+    }
+
+    @PostMapping(value = "/nominaGenerada/csv")
+    public String generarCsv(HttpServletResponse response) throws IOException {
+        reportService.exportToCsv(report, response);
         return "reporteGenerado";
     }
 
 
-    private Report generarReporte(String dni) {
+    private Nomina generarNomina(Dni dni) {
+        Trabajador trabajador = trabajadorRepository.findByDni(dni.getDni());
+        String dniTrabajador = trabajador.getDni();
+        float devengos = nominalService.devengos(trabajador);
+        float prorata = nominalService.prorata(trabajador);
+        float cc = nominalService.descuentoCC(trabajador);
+        float desempleo = nominalService.descuentoDesempleo(trabajador);
+        float fp = nominalService.descuentoFp(trabajador);
+        float aportaciones = nominalService.aportaciones(trabajador);
+        float irpf = nominalService.descuentoirpf(trabajador);
+        float deducciones = nominalService.deducciones(trabajador);
+        float neto = nominalService.neto(trabajador);
+        Nomina nomina = new Nomina(dniTrabajador, devengos, deducciones, aportaciones, neto, prorata, cc, desempleo, fp, irpf, "A");
+        nominaRepository.save(nomina);
+        return nomina;
+    }
+
+    private Report generarReporte(Nomina nomina) {
         Report report = new Report();
-        Trabajador trabajador = trabajadorRepository.findByDni(dni);
-        Nomina nomina = nominaRepository.findByDniTrabajador(trabajador.getDni());
-        SalarioBase salarioBase = salarioBaseRepository.findAllById(trabajador.getCategoria());
-        Antiguedad antiguedad = antiguedadRepository.findById(trabajador.getAntigüedad());
+        Trabajador trabajador = trabajadorRepository.findByDni(nomina.getDniTrabajador());
+        Antiguedad antiguedad = antiguedadRepository.findById(trabajador.getAntiguedad());
+        SalarioBase salarioBase = salarioBaseRepository.findById(trabajador.getCategoria());
         report.setNombre(trabajador.getNombre());
         report.setApellido(trabajador.getApellido());
         report.setCategoria(trabajador.getCategoria());
@@ -65,13 +103,11 @@ public class MainController {
         report.setDesempleo(nomina.getDESEMPLEO());
         report.setExtras(trabajador.getExtras());
         report.setId(nomina.getId());
-        report.setIrpf(nomina.getIrpf());
+        report.setIrpf(trabajador.getIrpf());
         report.setLiquido(antiguedad.getLiquido());
         report.setSalario(salarioBase.getSalario());
         report.setCategoria(trabajador.getCategoria());
         report.setApellido(trabajador.getApellido());
-        report.setDescuento_hextra_fueza_mayor(nomina.getDescuentoHextraFuezaMayor());
-        report.setDescuento_hextra_normales(nomina.getDescuentoHextraNormales());
         report.setDni_trabajador(trabajador.getDni());
         report.setGrupo(nomina.getGrupo());
         report.setFp(nomina.getFP());
@@ -85,4 +121,6 @@ public class MainController {
         report.setT_liquido(nomina.gettLiquido());
         return report;
     }
+
+
 }

@@ -36,17 +36,13 @@ public class Nomina {
     private float descuentoCC;
     private float descuentoDesempleo;
     private float descuentoFp;
-    private float descuentoHextraNormales;
-    private float descuentoHextraFuezaMayor;
     private float descuentoIrpf;
-    private float irpf;
     private String grupo;
 
     //Builder
 
 
-    public Nomina(String dniTrabajador, float tDevengos, float tDeducciones, float tAportaciones, float tLiquido, float prorata, float descuentoCC, float descuentoDesempleo, float descuentoFp,
-                  float descuentoHextraNormales, float descuentoHextraFuezaMayor, float descuentoIrpf, float irpf, String grupo) {
+    public Nomina(String dniTrabajador, float tDevengos, float tDeducciones, float tAportaciones, float tLiquido, float prorata, float descuentoCC, float descuentoDesempleo, float descuentoFp, float descuentoIrpf, String grupo) {
         this.dniTrabajador = dniTrabajador;
         this.tDevengos = tDevengos;
         this.tDeducciones = tDeducciones;
@@ -56,10 +52,8 @@ public class Nomina {
         this.descuentoCC = descuentoCC;
         this.descuentoDesempleo = descuentoDesempleo;
         this.descuentoFp = descuentoFp;
-        this.descuentoHextraNormales = descuentoHextraNormales;
-        this.descuentoHextraFuezaMayor = descuentoHextraFuezaMayor;
         this.descuentoIrpf = descuentoIrpf;
-        this.irpf = irpf;
+
         if (grupo.equals("A")) {
             this.grupo = grupo;
         } else if (grupo.equals("B")) {
@@ -70,7 +64,9 @@ public class Nomina {
     }
 
     public Nomina() {
+
     }
+
 //Getters/Setters
 
     public int getId() {
@@ -179,30 +175,6 @@ public class Nomina {
 
     public void setDescuentoFp(float descuentoFp) {
         this.descuentoFp = descuentoFp;
-    }
-
-    public float getDescuentoHextraNormales() {
-        return descuentoHextraNormales;
-    }
-
-    public void setDescuentoHextraNormales(float descuentoHextraNormales) {
-        this.descuentoHextraNormales = descuentoHextraNormales;
-    }
-
-    public float getDescuentoHextraFuezaMayor() {
-        return descuentoHextraFuezaMayor;
-    }
-
-    public void setDescuentoHextraFuezaMayor(float descuentoHextraFuezaMayor) {
-        this.descuentoHextraFuezaMayor = descuentoHextraFuezaMayor;
-    }
-
-    public float getIrpf() {
-        return irpf;
-    }
-
-    public void setIrpf(float irpf) {
-        this.irpf = irpf;
     }
 
     public String getGrupo() {

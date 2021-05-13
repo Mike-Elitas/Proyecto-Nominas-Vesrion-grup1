@@ -28,9 +28,10 @@ public class Trabajador {
     private int categoria;
     private int antiguedad;
     private int extras;
+    private float irpf;
 
     //Constructor
-    public Trabajador(String dni, String nombre, String apellido, String fechaNacimiento, String sexo, int categoria, int antiguedad, int extras) {
+    public Trabajador(String dni, String nombre, String apellido, String fechaNacimiento, String sexo, int categoria, int antiguedad, int extras, float irpf) {
         this.dni = dni;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -45,7 +46,7 @@ public class Trabajador {
         this.categoria = categoria;
         this.antiguedad = antiguedad;
         this.extras = extras;
-
+        this.irpf = irpf;
     }
 
     public Trabajador() {
@@ -117,5 +118,21 @@ public class Trabajador {
         this.extras = extras;
     }
 
-//Others Methods
+    public int getAntiguedad() {
+        return antiguedad;
+    }
+
+    public void setAntiguedad(int antiguedad) {
+        this.antiguedad = antiguedad;
+    }
+
+    public float getIrpf() {
+        return irpf;
+    }
+
+    public void setIrpf(float irpf) {
+        this.irpf = irpf;
+    }
+
+    //Others Methods
 }

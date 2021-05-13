@@ -13,6 +13,6 @@ import org.springframework.data.repository.CrudRepository;
  * @Author: Ismael - fmartin@nigul.cide.es
  * @Version:
  */
-public interface SalarioBaseRepository extends CrudRepository<SalarioBase,Integer> {
-    SalarioBase findAllById(int id);
+public interface SalarioBaseRepository extends CrudRepository<SalarioBase, Integer> {
+    SalarioBase findById(int id);
 }
