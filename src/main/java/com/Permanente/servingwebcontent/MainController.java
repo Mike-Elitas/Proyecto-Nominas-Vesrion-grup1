@@ -19,6 +19,10 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.AbstractList;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 @Controller
 public class MainController {
@@ -40,13 +44,19 @@ public class MainController {
     @GetMapping("/nomina")
     public String nomina(Model model) {
         Dni dni = new Dni();
-
+        List<String> dnis= new ArrayList<>();
+        List<Trabajador> trabajadorList= (List<Trabajador>) trabajadorRepository.findAll();
+        for (Trabajador t:
+             trabajadorList) {
+            dnis.add(t.getDni());
+        }
+        model.addAttribute("dnis", dnis);
         model.addAttribute("dni", dni);
         return "nomina";
     }
 
     @PostMapping("/nomina")
-    public String generar(@ModelAttribute("dni") Dni dni, Model model) {
+    public String generar(@ModelAttribute("dnis") Dni dni, Model model) {
         Nomina nomina = generarNomina(dni);
         report = generarReporte(nomina);
         model.addAttribute("t", report);
@@ -54,14 +64,14 @@ public class MainController {
     }
 
     @PostMapping(value = "/nominaGenerada/pdf")
-    public String generarPdf() throws JRException, FileNotFoundException {
-        reportService.exportToPdf(report);
+    public String generarPdf(Model model) throws JRException, FileNotFoundException {
+        model.addAttribute("report",reportService.exportToPdf(report));
         return "reporteGenerado";
     }
 
     @PostMapping(value = "/nominaGenerada/xml")
-    public String generarXml() throws JRException, IOException {
-        reportService.exportToXml(report);
+    public String generarXml(Model model) throws JRException, IOException {
+        model.addAttribute("report",reportService.exportToPdf(report));
         return "reporteGenerado";
     }
 

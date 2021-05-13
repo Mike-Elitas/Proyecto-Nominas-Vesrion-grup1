@@ -37,24 +37,31 @@ public class ReportService {
         return jasperPrint;
     }
 
-    public void exportToPdf(Report report) throws FileNotFoundException, JRException {
+    public String exportToPdf(Report report) throws FileNotFoundException, JRException {
         String sSistemaOperativo = System.getProperty("os.name");
         String a = System.getProperty("user.name");
         String path = "";
-        if (sSistemaOperativo == "Linux") {
+        if (sSistemaOperativo.equals("Linux")) {
             path = "/home/" + a;
         } else {
             path = "C:\\Users\\" + a;
         }
         JasperExportManager.exportReportToPdfFile(compilar(report), path + "\\Nomina" + report.getNombre() + ".pdf");
+        return path;
 
     }
 
-    public void exportToXml(Report report) throws JRException, IOException {
-
-        String path = "C:\\Users\\Deism\\OneDrive\\Escritorio";
+    public String exportToXml(Report report) throws JRException, IOException {
+        String sSistemaOperativo = System.getProperty("os.name");
+        String a = System.getProperty("user.name");
+        String path = "";
+        if (sSistemaOperativo.equals("Linux")) {
+            path = "/home/" + a;
+        } else {
+            path = "C:\\Users\\" + a;
+        }
         JasperExportManager.exportReportToXmlFile(compilar(report), path + "\\Nomina" + report.getNombre() + ".xml", false);
-
+        return path;
     }
 
     public void exportToCsv(Report report, HttpServletResponse response) throws IOException {
