@@ -14,8 +14,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
 import java.util.*;
 
 @Service
@@ -33,25 +31,34 @@ public class ReportService {
         JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(list);
 
         Map<String, Object> parameters = new HashMap<>();
-        parameters.put("createdBy", "Java Techie");
+
+        parameters.put("createdBy", "Ismale");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, dataSource);
         return jasperPrint;
     }
 
     public void exportToPdf(Report report) throws FileNotFoundException, JRException {
-        String path = "C:\\Users\\Deism\\OneDrive\\Escritorio";
+        String sSistemaOperativo = System.getProperty("os.name");
+        String a = System.getProperty("user.name");
+        String path = "";
+        if (sSistemaOperativo == "Linux") {
+            path = "/home/" + a;
+        } else {
+            path = "C:\\Users\\" + a;
+        }
         JasperExportManager.exportReportToPdfFile(compilar(report), path + "\\Nomina" + report.getNombre() + ".pdf");
 
     }
 
     public void exportToXml(Report report) throws JRException, IOException {
+
         String path = "C:\\Users\\Deism\\OneDrive\\Escritorio";
         JasperExportManager.exportReportToXmlFile(compilar(report), path + "\\Nomina" + report.getNombre() + ".xml", false);
 
     }
 
     public void exportToCsv(Report report, HttpServletResponse response) throws IOException {
-        response.setContentType("txt/csv");
+        response.setContentType("text/csv");
         response.setHeader("Content-disposition", "attachment; filename=Nomina" + report.getNombre() + ".csv");
 
         ICsvBeanWriter csvBeanWriter = new CsvBeanWriter(response.getWriter(), CsvPreference.STANDARD_PREFERENCE);

@@ -22,8 +22,10 @@ public class NominalServiceImp implements NominalService {
 
     @Override
     public float devengos(Trabajador trabajador) {
+
         SalarioBase salarioBase = salarioBaseRepository.findById(trabajador.getCategoria());
         Antiguedad antiguedad = antiguedadRepository.findById(trabajador.getAntigüedad());
+
         return salarioBase.getSalario() + antiguedad.getLiquido() + trabajador.getExtras();
     }
 
@@ -45,6 +47,7 @@ public class NominalServiceImp implements NominalService {
     @Override
     public float prorata(Trabajador trabajador) {
         SalarioBase salarioBase = salarioBaseRepository.findById(trabajador.getCategoria());
+
         float prorata = salarioBase.getSalario() / 14;
         float prorataBruto = devengos(trabajador) + prorata;
         return prorataBruto;

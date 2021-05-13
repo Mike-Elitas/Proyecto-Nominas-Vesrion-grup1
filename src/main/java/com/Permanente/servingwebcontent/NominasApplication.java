@@ -32,6 +32,7 @@ public class NominasApplication {
 
     @Bean
     public CommandLineRunner demo(TrabajadorRepository repository) {
+
         return (args) -> {
 //            repository.save(new Trabajador("43231815A", "Ismael", "Martin", "01/04/1999", "H", 1, 1, 50, 15));
 //            repository.save(new Trabajador("43531817B", "Miki", "Cañellas", "15/05/2000", "H", 5, 2, 55, 20));
@@ -99,6 +100,7 @@ public class NominasApplication {
             log.info("===============================================");
         };
     }
+
 
 
 }

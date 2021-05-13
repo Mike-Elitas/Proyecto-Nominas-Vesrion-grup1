@@ -40,6 +40,7 @@ public class MainController {
     @GetMapping("/nomina")
     public String nomina(Model model) {
         Dni dni = new Dni();
+
         model.addAttribute("dni", dni);
         return "nomina";
     }
